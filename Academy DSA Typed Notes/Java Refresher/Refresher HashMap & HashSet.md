@@ -312,7 +312,7 @@ HashMap<keyType, valueType> hm = new HashMap<keyType, valueType>();
 
 We can perform the following operations on HashMap.
 
-- Add
+- Put
 - Contains
 - Get
 - Update
