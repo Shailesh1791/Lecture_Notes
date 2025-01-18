@@ -312,7 +312,7 @@ HashMap<keyType, valueType> hm = new HashMap<keyType, valueType>();
 
 We can perform the following operations on HashMap.
 
-- Add
+- Put
 - Contains
 - Get
 - Update
@@ -410,8 +410,33 @@ In a HashMap, what is the purpose of the get operation?
 ```plaintext
 The `get` operation in HashMap is used to retrieve the value associated with a given key.
 ```
+# Core HashMap Methods
+
+| **Method**                                | **Description**                                                                | **Example**                                                   |
+|------------------------------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------|
+| **`put(K key, V value)`**                 | Inserts or updates a key-value pair.                                            | `map.put("Apple", 3);`                                        |
+| **`get(Object key)`**                     | Retrieves the value for the specified key.                                      | `map.get("Apple");`                                           |
+| **`remove(Object key)`**                  | Removes the mapping for the key.                                                | `map.remove("Apple");`                                        |
+| **`containsKey(Object key)`**             | Returns `true` if the key exists.                                               | `map.containsKey("Banana");`                                  |
+| **`containsValue(Object value)`**         | Returns `true` if the value exists.                                             | `map.containsValue(5);`                                       |
+| **`keySet()`**                            | Returns a set of all keys.                                                      | `Set<String> keys = map.keySet();`                            |
+| **`values()`**                            | Returns a collection of all values.                                             | `Collection<Integer> values = map.values();`                  |
+| **`entrySet()`**                          | Returns a set of all key-value pairs.                                           | `Set<Map.Entry<String, Integer>> entries = map.entrySet();`   |
+| **`size()`**                              | Returns the number of key-value pairs.                                          | `map.size();`                                                 |
+| **`isEmpty()`**                           | Returns `true` if the map is empty.                                             | `map.isEmpty();`                                              |
+| **`clear()`**                             | Removes all mappings from the map.                                              | `map.clear();`                                                |
+| **`putAll(Map<? extends K, ? extends V> m)`** | Copies all mappings from another map.                                     | `map.putAll(anotherMap);`                                     |
+| **`getOrDefault(Object key, V defaultValue)`** | Returns value if key exists, else default.                                | `map.getOrDefault("Grapes", 0);`                              |
+| **`replace(K key, V value)`**             | Replaces value for key if key exists.                                           | `map.replace("Banana", 7);`                                   |
+| **`replace(K key, V oldValue, V newValue)`** | Replaces value if key exists and matches old value.                         | `map.replace("Banana", 5, 8);`                                |
+| **`compute(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)`** | Computes new value for the key.         | `map.compute("Banana", (k, v) -> v + 2);`                     |
+| **`computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction)`** | Computes value if key is absent.          | `map.computeIfAbsent("Mango", k -> 5);`                       |
+| **`computeIfPresent(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction)`** | Computes if key exists.             | `map.computeIfPresent("Apple", (k, v) -> v + 1);`             |
+| **`merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction)`** | Merges value for key.                  | `map.merge("Banana", 3, Integer::sum);`                       |
+
 
 ---
+
 ## Problem Statement
 Given an integer array as input, return the corresponding frequency map.
 
